@@ -109,7 +109,7 @@ const checkWords = (sortedSearchWords) => {
                        let nlc = {};nlc[newLocationToCheck]= word[checkit];tempWord.push(nlc);nlc = {};
                     //    console.log("tempWord:",tempWord);
                     //    console.log("It Works"); 
-                       addWordToGrid(tempWord,grid); tempWord =[]; splitToShow(grid);doesItFit1 = true;checkit=wordLength;console.log("fit word:",Object.values(tempWord).join());
+                       addWordToGrid(tempWord,grid); tempWord =[]; splitToShow(grid);doesItFit1 = true;checkit=wordLength;
                    }   else if (grid[newLocationToCheck] !== undefined && grid[newLocationToCheck] === " "){ 
                     //    console.log("newLocationToCheck ",grid[newLocationToCheck]," location is empty and on grid, adding {" ,newLocationToCheck,":",word[checkit], "} to tempword");
                        let nlc = {};nlc[newLocationToCheck]= word[checkit];tempWord.push(nlc);nlc = {};

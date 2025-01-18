@@ -5,7 +5,7 @@ import InputWords from './InputWords';
 import WordListContext from '../context/WordListContext';
 const {rendered} = require("./rendered");
 
-console.log(rendered);
+// console.log(rendered);
 
 
 let rendered1 = rendered;
@@ -26,7 +26,7 @@ const [wordList, setWordList]= useState([]);
       setOriginalWords(); rendered1++;
     } else {}
 
-console.log("Grid wordList: ",wordList);
+// console.log("Grid wordList: ",wordList);
     function buildGrid() {
         let xlen = 15;
         let ylen =15;
@@ -76,9 +76,9 @@ console.log("Grid wordList: ",wordList);
         
                for (let tenWords = 0; tenWords < 10; tenWords++) {
                 let forName= `word${tenWords}`;
-                console.log("forname:",forName);
+                // console.log("forname:",forName);
                 let newWordValue = document.getElementById(`word${tenWords}`).value;
-                console.log("newWordValue:",newWordValue);
+                // console.log("newWordValue:",newWordValue);
                 words1.push(newWordValue);
             
                }
@@ -88,7 +88,7 @@ console.log("Grid wordList: ",wordList);
                newWordDoc.style.display="inline";
                let inputWordDoc = document.getElementById("inputWords");
                inputWordDoc.style.display = "none";
-               console.log("LATER WORDlIST:",wordList);
+              //  console.log("LATER WORDlIST:",wordList);
              
                
            }
