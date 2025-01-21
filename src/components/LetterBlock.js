@@ -9,35 +9,12 @@ const LetterBlock =({letter,index,rowNum}) =>{
 
   let squarekey= rowNum.toString()+letter.toString()+index.toString();
 
-  console.log(squarekey);
-
-  
-// function startword(e) {
-//   console.log(e.target);
-//   e.target.classList.add("purpleletter");
-//   e.target.classList.add("picked");
-//   e.target.parentNode.classList.add("picked");
-//   e.target.parentNode.classList.add("purpleletter");
-
-  
- 
-// }
-
-
-
-// function changecolor(ax) {
-//   document.getElementsByClassName("letterblock")[ax].classList.add("purpleletter");
-
-// }
-    // getSquare.addEventListener("mouseover", changeColor);
-
-  return (
+    return (
     <>
-    <div  className="letterblock"  key={squarekey}>
-      <p className="greentext">
-      {letter.toUpperCase()}</p>
-     </div>
-
+    <button  className="letterblock" key={squarekey}>
+      
+      {letter.toUpperCase()}
+     </button>
      </>
   )
 

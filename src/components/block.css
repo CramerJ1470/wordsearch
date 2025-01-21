@@ -11,17 +11,29 @@
 	border: 0.4rem groove rgb(138, 240, 36);
 
 	overflow:hidden;
-	
+	color: rgb(138, 240, 36);
+	font-size: 1.5rem;
+	font-weight: bolder;
+	padding-top: -1.5rem;
 	text-align: center;
 	
 }
 
 .greentext {
+
 	color: rgb(138, 240, 36);
+	-moz-text-shadow: 2px 1px 10px rgb(95, 38, 109);
+	-webkit-text-shadow: 2px 1px 10px rgb(95, 38, 109) .5;
+  	text-shadow: 1px 1px 2px  rgb(95, 38, 109) .5;
 	font-size: 3rem;
-	margin-top: -37%;
-	z-index:3;
+
 }
+
+.white {
+	color: rgb(95, 38, 109);
+	background-color: rgb(138, 240, 36);
+}
+
 
 
 
@@ -91,4 +103,37 @@ p.littlesquare {
 	background-color: rgb(138, 240, 36);
 }
 
+.bottombutton {
+	margin: 3rem;
+	border-radius: 10px;
+	background-color:rgb(138, 240, 36) ;
+	color: rgb(95, 38, 109);
+	font-size: 1.5rem;
+	font-weight: bolder;
+	padding-top: -1.5rem;
+}
 
+.bottombtn {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 10px;
+	background-color:rgb(138, 240, 36) ;
+	color: rgb(95, 38, 109);
+	font-size: 1.5rem;
+	font-weight: bolder;
+	padding-top: -1.5rem;
+}
+
+#foundword {
+	display: none;
+}
+
+.rightside  {
+
+	border: 0.4rem groove rgb(138, 240, 36);
+	border-radius: 1rem;
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background-color: rgb(95, 38, 109);
+}

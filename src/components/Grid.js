@@ -245,23 +245,70 @@ for (let l = 0; l <= listLength;l++){
     if (l%15===0){rows.push(row);row=[];row.push(list[l]);}
        else row.push(list[l]);
   }
+  let checkedList = [];
+let pickedWord ="";
+let newWordList=[];
+let letterIndex = 0;
 
   function startPlay() {
-   
-
+   console.log("start Play wordList:",wordList);
+   document.getElementById("startplay").style.display = "none";
+   document.getElementById("foundword").style.display = "block";
+checkedList = wordList;
     let squares = document.querySelectorAll(".letterblock");
-    
+   
     for (const square of squares) {
-       console.log("square:",square);
+      
       square.addEventListener("click",changecolor);
     
     }
       }
      function changecolor(e) {
+        console.log("Chamgecolor checkedList:",checkedList);
+        console.log(e.target);
+        let letterToCheck = e.target.textContent;
+        e.target.classList.add("white");        
+        console.log("checkedList:",checkedList);
+        for (let wc = 0; wc < checkedList.length; wc++) {
+            
+            if (checkedList[wc][letterIndex] === letterToCheck) {if (pickedWord.length == 0  && letterIndex==0) {pickedWord = letterToCheck;} else if (pickedWord.length == letterIndex) {pickedWord=pickedWord+letterToCheck;console.log("pickedWord add:",pickedWord); }  console.log("word;",checkedList[wc]);newWordList.push(checkedList[wc]); 
+        }
+    }
+            
+            
        
-    if (e.target.style.backgroundColor == "rgb(95, 38, 109)") {e.target.style.backgroundColor= "white";} else {e.target.style.backgroundColor = "rgb(95, 38, 109)"}
+           
+         
+                    
+        checkedList= newWordList;
+       
+        if (newWordList.length == 1 && newWordList[0].length == letterIndex+1) {console.log("got the word!!!!");}
+        
+        newWordList=[];
+        console.log("pickedWord:",pickedWord);
+        letterIndex++;
+       
+    //     if (word[letterIndex] ===letterToCheck) {console.log("word works so far:",word);
+            
+    //     }  else {checkedList[word] = ''; return;}
+    // }
+     
+       
+   
+   
      }   
      
+
+     function foundWord() {
+        if (wordList.length == 0) { alert("You've Found All The Words!!!");} else { alert(`You found ${pickedWord}`); pickedWord ='';}
+        console.log("word");
+        wordList = wordList.filter(e => e !== checkedList[0]);console.log("shorter checkedList:",wordList);
+
+        newWordList = [];
+        checkedList = wordList;
+        console.log("new CheckList:",checkedList); 
+        letterIndex=0;
+     }
   
 
   return (
@@ -270,7 +317,9 @@ for (let l = 0; l <= listLength;l++){
        
         {rows.map((row,index) => {return <Row row={row} rowNum={index}/>})}
     </div>
-    <button onClick={startPlay}>Start</button>
+    <button id="startplay" className="bottombutton" onClick={startPlay}>Start</button>
+    <button id="foundword" className="bottombutton"  onClick={foundWord}>Found Word</button>
+    
     </>
   )
 }
