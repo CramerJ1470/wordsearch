@@ -13,6 +13,7 @@ import WordListContext from './context/WordListContext';
 import RenderOnceContext from './context/RenderOnceContext';
 
 
+
 export const App=()=> {
 
  
@@ -29,9 +30,7 @@ export const App=()=> {
     
     <>
     <BrowserRouter>
-    {/* <WordListContext.Provider value={{ wordList:wordList, setWordList }}>
-      <RenderOnceContext.Provider value={{renderOnce:renderOnce,setRenderOnce}}> */}
-    
+   
 	    <Routes>
         <Route
            path="/"
@@ -47,8 +46,7 @@ export const App=()=> {
 
        
       </Routes>
-      {/* </RenderOnceContext.Provider>
-    </WordListContext.Provider> */}
+
     </BrowserRouter>
     </>
   );

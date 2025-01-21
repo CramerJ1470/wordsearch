@@ -4,22 +4,25 @@
 
 
 
-
 .letterblock {
 	background-color: rgb(95, 38, 109);
 	width: 3.5rem;
 	height: 3.5rem;
 	border: 0.4rem groove rgb(138, 240, 36);
 	cursor: url("../assets/fingerCursor.png"),auto;
+	overflow:hidden;
+	
+	text-align: center;
 	
 }
 
- p.greentext {
+.greentext {
 	color: rgb(138, 240, 36);
 	font-size: 3rem;
 	margin-top: -37%;
-	text-align: center;
 }
+
+
 
 .rowflex {
 	display: flex;
@@ -46,11 +49,11 @@
 .heavytext {
 	font-weight:bolder;
 	font-size:1.5rem;
-	color:}
-	;
+	color: rgb(138, 240, 36);
 	-moz-text-shadow: 2px 1px 10px rgb(95, 38, 109);
 	-webkit-text-shadow: 2px 1px 10px rgb(95, 38, 109) .5;
   	text-shadow: 1px 1px 2px  rgb(95, 38, 109) .5;
+}
 
 .aligncenter {
 	align-items: center;
@@ -68,3 +71,23 @@
 .bgpic {
 	background-image: url("https://videocdn.cdnpk.net/euphony/content/video/partners2319/thumbnails/h7c15b67e_5148566_large.jpg");
 }
+
+p.littlesquare {
+	border: 1rem;
+	margin-top: -90%;
+	margin-left: 35%;
+	width: 0.4rem;
+	height: 0.4rem;
+	
+}
+:hover.littlesquare {
+	width: 1rem;
+	height: 1rem;
+	background-color: greenyellow;
+}
+
+.picked {
+	background-color: rgb(138, 240, 36);
+}
+
+

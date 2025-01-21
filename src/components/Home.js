@@ -38,7 +38,7 @@ const [wordList, setWordList]= useState([]);
             for (let y =1; y <= ylen;y++) {
                 
                 if (x < 10) {
-                    let xlet = x.toString()
+                    let xlet = x.toString();
                     xString = "0"+ xlet;
                 } else { xString =x.toString();}
         
@@ -95,7 +95,7 @@ const [wordList, setWordList]= useState([]);
           
   return (
     <div className="home1">
-      <img class="wholebg bgpic"/>
+      <img className="wholebg bgpic"/>
          <div className="container-fluid ohpercent">
         <div className="row width">
         <div className="col-lg-3">

@@ -166,8 +166,7 @@ const getDirectionNum =(direction) =>{
   } else if (direction === "c") {
       return  -100;
   } else if (direction === "d") {
-      return -99
-  } else if (direction === "e") {
+      return -99;  } else if (direction === "e") {
       return +1;
   } else if (direction === "f") {
       return 101;
@@ -247,12 +246,31 @@ for (let l = 0; l <= listLength;l++){
        else row.push(list[l]);
   }
 
+  function startPlay() {
+   
+
+    let squares = document.querySelectorAll(".greentext");
+    
+    for (const square of squares) {
+       
+      square.addEventListener("click",changecolor);
+    
+    }
+      }
+     function changecolor(e) {
+       
+    if (e.target.style.backgroundColor == "rgb(95, 38, 109)") {e.target.style.backgroundColor= "white";} else {e.target.style.backgroundColor = "rgb(95, 38, 109)"}
+     }   
+     setTimeout(() => {startPlay();},2500);
+  
+
   return (
     <>
     <div className="centertext row">
        
-        {rows.map((row) => {return <Row row={row}/>})}
+        {rows.map((row,index) => {return <Row row={row} rowNum={index}/>})}
     </div>
+    <button onClick={startPlay}>Start</button>
     </>
   )
 }

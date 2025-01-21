@@ -52,4 +52,4 @@ function InputWords() {
 }
 
 
-export default InputWords
+export default InputWords;
