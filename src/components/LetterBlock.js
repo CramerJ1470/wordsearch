@@ -7,7 +7,7 @@ import './block.css';
 
 const LetterBlock =({letter,index,rowNum}) =>{
 
-  let squarekey= rowNum+letter+index;
+  let squarekey= rowNum.toString()+letter.toString()+index.toString();
 
   console.log(squarekey);
 

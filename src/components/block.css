@@ -9,7 +9,7 @@
 	width: 3.5rem;
 	height: 3.5rem;
 	border: 0.4rem groove rgb(138, 240, 36);
-	cursor: url("../assets/fingerCursor.png"),auto;
+
 	overflow:hidden;
 	
 	text-align: center;
@@ -20,6 +20,7 @@
 	color: rgb(138, 240, 36);
 	font-size: 3rem;
 	margin-top: -37%;
+	z-index:3;
 }
 
 
@@ -31,13 +32,13 @@
 .vertsetup {
 	display: flex;
 	flex-direction: column;
-	cursor: url("../assets/fingerCursor.png"),auto;
+	
 }
 
 .inputbox {
 	
 	border: 0.4rem groove rgb(138, 240, 36);
-	cursor: url("../assets/fingerCursor.png"),auto;
+	
 	width: 10ch;
 	
 }

@@ -249,10 +249,10 @@ for (let l = 0; l <= listLength;l++){
   function startPlay() {
    
 
-    let squares = document.querySelectorAll(".greentext");
+    let squares = document.querySelectorAll(".letterblock");
     
     for (const square of squares) {
-       
+       console.log("square:",square);
       square.addEventListener("click",changecolor);
     
     }
@@ -261,7 +261,7 @@ for (let l = 0; l <= listLength;l++){
        
     if (e.target.style.backgroundColor == "rgb(95, 38, 109)") {e.target.style.backgroundColor= "white";} else {e.target.style.backgroundColor = "rgb(95, 38, 109)"}
      }   
-     setTimeout(() => {startPlay();},2500);
+     
   
 
   return (

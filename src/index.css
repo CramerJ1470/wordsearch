@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url("./assets/fingerCursor.png"),auto;
+ 
   background-image: url("./assets/bgpic.jpg");
   
  
@@ -31,9 +31,7 @@ code {
   text-shadow: 1px 1px 2px  rgb(95, 38, 109) ;
 }
 
-.fingercursor {
-  cursor: url("./assets/fingerCursor.png"),auto;
-}
+
 
 img {
 
