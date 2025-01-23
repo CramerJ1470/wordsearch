@@ -79,7 +79,7 @@ const [wordList,setWordList] = useState(wordList1);
                setWordList(words1);
 
                let newWordDoc = document.getElementById("newWords");
-               newWordDoc.style.display="inline";
+               newWordDoc.style.display="block";
                let inputWordDoc = document.getElementById("inputWords");
                inputWordDoc.style.display = "none";
               //  console.log("LATER WORDlIST:",wordList);hW
