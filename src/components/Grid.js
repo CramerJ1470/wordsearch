@@ -252,7 +252,7 @@ let letterIndex = 0;
 
   function startPlay() {
    console.log("start Play wordList:",wordList);
-   document.getElementById("startplay").style.display = "none";
+   document.getElementById("startplay").style.visibility = "hidden";
    document.getElementById("foundword").style.display = "block";
 checkedList = wordList;
     let squares = document.querySelectorAll(".letterblock");
@@ -264,39 +264,19 @@ checkedList = wordList;
     
     }
       }
-     function changecolor(e) {
-        console.log("Chamgecolor checkedList:",checkedList);
-        console.log(e.target);
+      function changecolor(e) {
         let letterToCheck = e.target.textContent;
         e.target.classList.add("white");        
-        console.log("checkedList:",checkedList);
         for (let wc = 0; wc < checkedList.length; wc++) {
-            
-            if (checkedList[wc][letterIndex] === letterToCheck) {if (pickedWord.length == 0  && letterIndex==0) {pickedWord = letterToCheck;} else if (pickedWord.length == letterIndex) {pickedWord=pickedWord+letterToCheck;console.log("pickedWord add:",pickedWord); }  console.log("word;",checkedList[wc]);newWordList.push(checkedList[wc]); 
+            if (checkedList[wc][letterIndex] === letterToCheck) {
+                if (pickedWord.length == 0  && letterIndex==0) {pickedWord = letterToCheck;} 
+                else if (pickedWord.length == letterIndex) {pickedWord=pickedWord+letterToCheck; }  
+                newWordList.push(checkedList[wc]); 
+            }
         }
-    }
-            
-            
-       
-           
-         
-                    
         checkedList= newWordList;
-       
-        if (newWordList.length == 1 && newWordList[0].length == letterIndex+1) {console.log("got the word!!!!");}
-        
         newWordList=[];
-        console.log("pickedWord:",pickedWord);
         letterIndex++;
-       
-    //     if (word[letterIndex] ===letterToCheck) {console.log("word works so far:",word);
-            
-    //     }  else {checkedList[word] = ''; return;}
-    // }
-     
-       
-   
-   
      }   
      
 
@@ -317,7 +297,7 @@ checkedList = wordList;
 
   return (
     <>
-    <div className="centertext row padleft ohpercent">
+    <div className="row padleft ohpercent pad5">
        
         {rows.map((row,index) => {return <Row row={row} rowNum={index}/>})}
     </div>

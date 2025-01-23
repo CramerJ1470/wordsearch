@@ -95,7 +95,7 @@ const [wordList,setWordList] = useState(wordList1);
       <img className="wholebg bgpic"/>
          <div className="container-fluid ">
         <div className="row width">
-        <div className=" col-lg-3 directions">
+        <div className=" col-lg-3">
           <Directions/>
         </div>
     
@@ -115,8 +115,8 @@ const [wordList,setWordList] = useState(wordList1);
     <div id="inputWords" >
     <div className="vertflex">
                 <div className="vertsetup fingercursor aligncenter inputside" action="">
-                    {wordSetUp.map((s,index) => {let forName= `word${index}`; return (<><div className="row rowflex" key={forName}><label className="col-sm-6 inputpad rowflex1" htmlFor={forName}>Word #{s+1}:</label><input className="col-sm-6 aligncenter fingercursor inputbox heavytext" type="text" id={forName} name={forName}/></div></>)})}
-                    <button className="bottombtn" onClick={submitIt} type="submit">Submit</button>
+                    {wordSetUp.map((s,index) => {let forName= `word${index}`; return (<><div className="rowflex centerdiv" key={forName}><label className="pad5 col-sm-3 inputpad" htmlFor={forName}></label><input className="col-sm-6 inputbox heavytext purpletext" type="text" id={forName} name={forName} placeholder={`Word${s+1}`}/></div></>)})}
+                    <button className="bottombtn width40p" onClick={submitIt} type="submit">Submit</button>
                     <div id="putwordhere"></div>
                 </div>
 

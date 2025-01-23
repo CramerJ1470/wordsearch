@@ -5,18 +5,13 @@ import Home from './Home';
 function Landing() {
   return (
     <>
-     <div className="container-fluid ">
-        <div className="row">
-            <div className="col-lg-2"></div>
-            <div className="centertext col-lg-8">
-                <div className="titleblock centertext">
+    <div className="fullwidth pad5">
+        <div className="titleblock centerdiv">
                     SillyNFTier Wordsearch
-                </div>
-            </div>
-        <div className="col-lg-2"></div>
         </div>
-        </div>
-      
+        
+    </div>
+
         <div className="home">
             <Home/>
         </div>
