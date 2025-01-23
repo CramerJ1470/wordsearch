@@ -300,11 +300,13 @@ checkedList = wordList;
      
 
      function foundWord() {
-        if (wordList.length ===1 && wordList[0] === pickedWord) { alert("You've Found All The Words!!!");} else { alert(`You found ${pickedWord}`); pickedWord ='';}
+        if (wordList.length ===1 && wordList[0] === pickedWord) { alert("You've Found All The Words!!!");} else { alert(`You found ${pickedWord}`); }
         console.log("word");
         wordList = wordList.filter(e => e !== checkedList[0]);
         console.log("shorter checkedList:",wordList);
-
+       
+        document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";
+        pickedWord ='';
         newWordList = [];
         checkedList = wordList;
         console.log("new CheckList:",checkedList); 

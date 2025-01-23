@@ -106,7 +106,7 @@ const [wordList,setWordList] = useState(wordList1);
     
         <div id="newWords"  className="rightside">
     <div className="vertflex " >
-      {searchWords.map((word)=> {return <><div className="word" key={word}>{word}</div></>})}
+      {searchWords.map((word)=> {return <><div className="word" id={word} key={word}>{word}</div></>})}
     </div>
     <button className="bottomb" onClick={makeOwnWords}>Make My Own Words</button>
     </div>
