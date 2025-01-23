@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+  max-width:100%;
   background-image: url("./assets/bgpic.jpg");
   
  
@@ -21,9 +21,7 @@ code {
   
 }
 
-.ohpercent {
-  width:100%
-}
+
 
 .word {
   font-size:3rem;

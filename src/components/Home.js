@@ -14,20 +14,11 @@ const {rendered} = require("./rendered");
 let rendered1 = rendered;
 
 
-let wordList1 = ["BENIGN","BEING","BEET","BEIGE","HINTING","NIGHT","EIGHT","THING","ENGINE","GENIE"];
+let wordList1= ["BENIGN","BEING","BEET","BEIGE","HINTING","NIGHT","EIGHT","THING","ENGINE","GENIE"];
 function Home() {
 
-const [wordList, setWordList]= useState([]);
-
- 
-
-    function setOriginalWords() {
-      setWordList(wordList1);
-    }
-    
-    if (rendered1 ===0) {
-      setOriginalWords(); rendered1++;
-    } else {}
+     
+const [wordList,setWordList] = useState(wordList1);
 
 // console.log("Grid wordList: ",wordList);
     function buildGrid() {
@@ -62,7 +53,7 @@ const [wordList, setWordList]= useState([]);
           let words1 =[];
           let wordSetUp = [];
          
-           let searchWords= wordList;
+           
          
         
            function makeOwnWords() {
@@ -91,23 +82,33 @@ const [wordList, setWordList]= useState([]);
                newWordDoc.style.display="inline";
                let inputWordDoc = document.getElementById("inputWords");
                inputWordDoc.style.display = "none";
-              //  console.log("LATER WORDlIST:",wordList);
+              //  console.log("LATER WORDlIST:",wordList);hW
              
-               
            }
           
+
+           let searchWords = wordList;
+
+
   return (
     <div className="home1">
       <img className="wholebg bgpic"/>
-         <div className="container-fluid ohpercent">
+         <div className="container-fluid ">
         <div className="row width">
-        <div className="col-lg-3">
-        <div id="newWords">
-    <div className="vertflex" >
-      
+       
+    
+     
+        <div className="col-lg-10 ">
+          <Grid grid={grid} wordList={wordList}/>
+        </div>
+    
+        <div className="col-lg-2 padleft">
+    
+        <div id="newWords"  className="rightside">
+    <div className="vertflex " >
       {searchWords.map((word)=> {return <><div className="word" key={word}>{word}</div></>})}
     </div>
-    <button className="bottombtn" onClick={makeOwnWords}>Make My Own Words</button>
+    <button className="bottomb" onClick={makeOwnWords}>Make My Own Words</button>
     </div>
     <div id="inputWords">
     <div className="vertflex">
@@ -118,16 +119,10 @@ const [wordList, setWordList]= useState([]);
                 </div>
 
     </div>
-    </div>
-        </div>
-        <div className="col-lg-6">
-          <Grid grid={grid} wordList={wordList}/>
-        </div>
-        <div className="col-sm-3">
-          <Directions/>
-        </div>
         </div>
       </div>
+      </div>
+    </div>
     </div>
   )
 }

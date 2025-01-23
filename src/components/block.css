@@ -19,6 +19,13 @@
 	
 }
 
+.bordergreen {
+
+	border-style: solid;
+	border-color: rgb(138, 240, 36);
+	border-radius: 10px;
+}
+
 .greentext {
 
 	color: rgb(138, 240, 36);
@@ -74,6 +81,7 @@
 
 #inputWords {
 	display: none;
+	justify-content: center;
 }
 
 .wholebg {
@@ -104,36 +112,58 @@ p.littlesquare {
 }
 
 .bottombutton {
-	margin: 3rem;
+	margin:1.5rem;
 	border-radius: 10px;
 	background-color:rgb(138, 240, 36) ;
 	color: rgb(95, 38, 109);
 	font-size: 1.5rem;
 	font-weight: bolder;
 	padding-top: -1.5rem;
+	width: 20rem;
 }
+
 
 .bottombtn {
 	margin-top: 1rem;
-	margin-bottom: 1rem;
 	border-radius: 10px;
 	background-color:rgb(138, 240, 36) ;
 	color: rgb(95, 38, 109);
 	font-size: 1.5rem;
 	font-weight: bolder;
 	padding-top: -1.5rem;
+	width: 20rem;
 }
+	
 
 #foundword {
 	display: none;
+	
+	
 }
 
 .rightside  {
-
 	border: 0.4rem groove rgb(138, 240, 36);
+	justify-content: center;
 	border-radius: 1rem;
-	padding: 1rem;
+	padding: .5rem;
 	font-size: 1.5rem;
 	font-weight: bold;
 	background-color: rgb(95, 38, 109);
+	height: 52.5rem;
+}
+
+.padleft {
+	justify-content: center;
+	text-align:center;
+}
+
+.bottomb {
+	margin-top: 1rem;
+	border-radius: 10px;
+	background-color:rgb(138, 240, 36) ;
+	color: rgb(95, 38, 109);
+	font-size: 1.5rem;
+	font-weight: bolder;
+	padding-top: -1.5rem;
+	
 }

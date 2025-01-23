@@ -252,7 +252,7 @@ let letterIndex = 0;
 
   function startPlay() {
    console.log("start Play wordList:",wordList);
-   document.getElementById("startplay").style.display = "none";
+   document.getElementById("startplay").style.visibility = "hidden";
    document.getElementById("foundword").style.display = "block";
 checkedList = wordList;
     let squares = document.querySelectorAll(".letterblock");
@@ -300,9 +300,10 @@ checkedList = wordList;
      
 
      function foundWord() {
-        if (wordList.length == 0) { alert("You've Found All The Words!!!");} else { alert(`You found ${pickedWord}`); pickedWord ='';}
+        if (wordList.length ===1 && wordList[0] === pickedWord) { alert("You've Found All The Words!!!");} else { alert(`You found ${pickedWord}`); pickedWord ='';}
         console.log("word");
-        wordList = wordList.filter(e => e !== checkedList[0]);console.log("shorter checkedList:",wordList);
+        wordList = wordList.filter(e => e !== checkedList[0]);
+        console.log("shorter checkedList:",wordList);
 
         newWordList = [];
         checkedList = wordList;
@@ -313,12 +314,16 @@ checkedList = wordList;
 
   return (
     <>
-    <div className="centertext row">
+    <div className="centertext row padleft ohpercent">
        
         {rows.map((row,index) => {return <Row row={row} rowNum={index}/>})}
     </div>
+    <div className="padleft">
     <button id="startplay" className="bottombutton" onClick={startPlay}>Start</button>
+    </div>
+    <div className="padleft"> 
     <button id="foundword" className="bottombutton"  onClick={foundWord}>Found Word</button>
+    </div>
     
     </>
   )

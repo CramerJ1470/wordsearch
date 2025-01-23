@@ -17,11 +17,13 @@ import RenderOnceContext from './context/RenderOnceContext';
 export const App=()=> {
 
  
+  const [wordList, setWordList] = useState([]);
 
 
-
-
-      
+  useEffect(() => {
+    setWordList();
+  }, [wordList]);
+  
 
     
 
@@ -29,12 +31,18 @@ export const App=()=> {
 
     
     <>
+
     <BrowserRouter>
-   
+   <WordListContext.Provider
+					value={{
+						wordList: wordList,
+						setWordList,
+					}}
+				>
 	    <Routes>
         <Route
            path="/"
-           element={<Home />}
+           element={<Home wordList={wordList}/>}
         />
        
       
@@ -46,7 +54,7 @@ export const App=()=> {
 
        
       </Routes>
-
+      </WordListContext.Provider>
     </BrowserRouter>
     </>
   );

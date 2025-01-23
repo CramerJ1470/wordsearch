@@ -23,7 +23,7 @@ function InputWords() {
         words1.push(newWordValue);
     
        }
-       
+       document.getElementById("startplay").style.visibility ="";
     setWordList(words1);
     document.getElementById("putwordhere").innerText = wordList;
     console.log("later Input words:",wordList);
