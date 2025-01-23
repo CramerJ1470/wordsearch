@@ -27,7 +27,7 @@ function Grid({grid, wordList}) {
 
 let searchWords = wordList;
 
-
+let gofind = false;
 function buildGrid() {
   xlen = 15;
   ylen =15;
@@ -252,10 +252,11 @@ let letterIndex = 0;
 
   function startPlay() {
    console.log("start Play wordList:",wordList);
-   document.getElementById("startplay").style.visibility = "hidden";
+   document.getElementById("startplay").style.display = "none";
    document.getElementById("foundword").style.display = "block";
 checkedList = wordList;
     let squares = document.querySelectorAll(".letterblock");
+    gofind = true;
    
     for (const square of squares) {
       
@@ -320,13 +321,15 @@ checkedList = wordList;
        
         {rows.map((row,index) => {return <Row row={row} rowNum={index}/>})}
     </div>
+ 
     <div className="padleft">
     <button id="startplay" className="bottombutton" onClick={startPlay}>Start</button>
     </div>
+ 
     <div className="padleft"> 
     <button id="foundword" className="bottombutton"  onClick={foundWord}>Found Word</button>
     </div>
-    
+  
     </>
   )
 }
