@@ -59,6 +59,8 @@
 .rowflex {
 	display: flex;
 	flex-direction: row;
+	color: rgb(138, 240, 36);
+	
 }
 .vertsetup {
 	display: flex;
@@ -69,13 +71,19 @@
 .inputbox {
 	
 	border: 0.4rem groove rgb(138, 240, 36);
-	
-	width: 10ch;
+	border-radius: 10px;
+	margin-top:0.25rem;
+	width: 12ch;
 	
 }
 .aligncenter.inputbox {
 
   text-shadow: 1px 1px 2px  rgb(95, 38, 109) 0;
+}
+
+.inputpad {
+	padding-top: 1rem;
+	text-align:left;
 }
 
 .heavytext {
@@ -171,6 +179,19 @@ p.littlesquare {
 	width:80%;
 }
 
+
+.inputside {
+	 
+		border: 0.4rem groove rgb(138, 240, 36);
+		justify-content: center;
+		border-radius: 1rem;
+		padding: .5rem;
+		font-weight: bold;
+		background-color: rgb(95, 38, 109);
+		height: 52.5rem;
+		
+}	 
+
 .padleft {
 	justify-content: center;
 	text-align:center;
@@ -182,7 +203,7 @@ p.littlesquare {
 	background-color:rgb(138, 240, 36) ;
 	color: rgb(95, 38, 109);
 	font-size: 1.5rem;
-	font-weight: bolder;
+	font-weight: bold;
 	padding-top: -1.5rem;
 	
 }

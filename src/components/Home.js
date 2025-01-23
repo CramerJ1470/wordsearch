@@ -112,11 +112,11 @@ const [wordList,setWordList] = useState(wordList1);
     </div>
     <button className="bottomb" onClick={makeOwnWords}>Make My Own Words</button>
     </div>
-    <div id="inputWords">
+    <div id="inputWords" >
     <div className="vertflex">
-                <div className="vertsetup fingercursor aligncenter " action="">
-                    {wordSetUp.map((s,index) => {let forName= `word${index}`; return (<><div className="row rowflex" key={forName}><label className="col-sm-4 fingercursor rowflex" htmlFor={forName}>Word #{s+1}:</label><input className="col-sm-6 aligncenter fingercursor inputbox heavytext" type="text" id={forName} name={forName}/></div></>)})}
-                    <button className="inputbox" onClick={submitIt} type="submit">Submit</button>
+                <div className="vertsetup fingercursor aligncenter inputside" action="">
+                    {wordSetUp.map((s,index) => {let forName= `word${index}`; return (<><div className="row rowflex" key={forName}><label className="col-sm-6 inputpad rowflex1" htmlFor={forName}>Word #{s+1}:</label><input className="col-sm-6 aligncenter fingercursor inputbox heavytext" type="text" id={forName} name={forName}/></div></>)})}
+                    <button className="bottombtn" onClick={submitIt} type="submit">Submit</button>
                     <div id="putwordhere"></div>
                 </div>
 
