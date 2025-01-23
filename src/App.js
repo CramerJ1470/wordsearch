@@ -11,6 +11,7 @@ import NewGrid from './components/NewGrid';
 import Home from "./components/Home";
 import WordListContext from './context/WordListContext';
 import RenderOnceContext from './context/RenderOnceContext';
+import Landing from './components/Landing';
 
 
 
@@ -42,13 +43,13 @@ export const App=()=> {
 	    <Routes>
         <Route
            path="/"
-           element={<Home wordList={wordList}/>}
+           element={<Landing wordList={wordList}/>}
         />
        
       
       <Route
            path="/home"
-           element={<Home  />}
+           element={<Landing  />}
         />
 
 

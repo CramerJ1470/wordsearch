@@ -1,5 +1,17 @@
 
+.titleblock {
+	border: 0.4rem groove rgb(138, 240, 36);
+	border-radius: 1rem;
+	padding: .5rem;
+	font-size: 3.5rem;
+	font-weight: bold;
+	background-color: rgb(95, 38, 109);
+	margin-left: 12.5rem;
+	width: 52.5rem;
+	text-align: center;
+	color: rgb(138, 240, 36);
 
+}
 
 
 
@@ -79,6 +91,11 @@
 	align-items: center;
 }
 
+.justifycenter {
+	width: 100%;
+	text-align:center;
+}
+
 #inputWords {
 	display: none;
 	justify-content: center;
@@ -150,6 +167,7 @@ p.littlesquare {
 	font-weight: bold;
 	background-color: rgb(95, 38, 109);
 	height: 52.5rem;
+	width:80%;
 }
 
 .padleft {

@@ -95,14 +95,16 @@ const [wordList,setWordList] = useState(wordList1);
       <img className="wholebg bgpic"/>
          <div className="container-fluid ">
         <div className="row width">
-       
+        <div className=" col-lg-3 directions">
+          <Directions/>
+        </div>
     
      
-        <div className="col-lg-10 ">
+        <div className="col-lg-6">
           <Grid grid={grid} wordList={wordList}/>
         </div>
     
-        <div className="col-lg-2 padleft">
+        <div className="col-lg-3 padleft">
     
         <div id="newWords"  className="rightside">
     <div className="vertflex " >
