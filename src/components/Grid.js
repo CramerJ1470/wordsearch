@@ -24,14 +24,26 @@ let doesItFit1=false;
 
 
 function Grid({grid, wordList}) {
-
+let gridBlocks = {};
 let searchWords = wordList;
+class GridBlock {
+    constructor(index,loc) {
+        this.location = Number(loc);
+        this.index = index;
+        this.picked = false;
+        this.letter = " ";
+        this.lastcolor = "rgb(95, 38, 109)";
+        this.backgroundcolor = "rgb(95, 38, 109)";
+
+    }
+}
 
 let gofind = false;
 function buildGrid() {
   xlen = 15;
   ylen =15;
   xString="";
+  let z = 0;
   let builtgrid = {};
    for (let x = 1; x <= xlen;x++) {
   
@@ -46,12 +58,15 @@ function buildGrid() {
           // console.log("y:",y.toString(),"x:",xString);   
            let newLocation = Number(y.toString()+xString);
            builtgrid[newLocation]=" ";
+           gridBlocks[newLocation] = new GridBlock(z,newLocation);
+           
       }
+      
    }
       return builtgrid;
   }
 
-
+console.log("gridBlocks:",gridBlocks);
 
 const addWordToGrid =(tempWord,grid)=> {
   let numberObjects = [];
@@ -199,7 +214,7 @@ const getCheckArr = (newLocation) => {
       return middle;
   }
 };
-
+let indexFromObjects =[];
 let vals = [];
 function splitToShow(grid) {
   let newline = [];
@@ -207,6 +222,7 @@ function splitToShow(grid) {
   let len = Object.values(grid).length;
   vals = Object.values(grid);
   let index = Object.keys(grid);
+  indexFromObjects = index;
   let z=0;
   for (let b = 0; b < len+1;b++) {
       if (z == 15) { }
@@ -235,15 +251,17 @@ checkWords(sortedSearchWords);
 
 let list = vals;
 
-
+let indexRow = [];
+let indexRows =[];
 let listLength = list.length;
 let rows= [];
 let row=[];
 
+
 for (let l = 0; l <= listLength;l++){
   // if (yadd===0 && l ===0) {rows.push("0000");}
-    if (l%15===0){rows.push(row);row=[];row.push(list[l]);}
-       else row.push(list[l]);
+    if (l%15===0){rows.push(row);row=[];row.push(list[l]);indexRows.push(indexRow);indexRow=[];indexRow.push(indexFromObjects[l]);}
+       else row.push(list[l]);indexRow.push(indexFromObjects[l]);
   }
   let checkedList = [];
 let pickedWord ="";
@@ -266,32 +284,45 @@ checkedList = wordList;
       }
       function changecolor(e) {
         let letterToCheck = e.target.textContent;
-        e.target.classList.add("white");        
+        let letterBlock = Number(e.target.name);
+        console.log("Letterblock:",letterBlock);
+        e.target.classList.add("white");    
+        console.log(letterToCheck);    
+        console.log("letterIndexCC: ",letterIndex);
         for (let wc = 0; wc < checkedList.length; wc++) {
+            console.log("wc :",wc);
+
+            console.log(checkedList[wc][letterIndex]);
             if (checkedList[wc][letterIndex] === letterToCheck) {
                 if (pickedWord.length == 0  && letterIndex==0) {pickedWord = letterToCheck;} 
                 else if (pickedWord.length == letterIndex) {pickedWord=pickedWord+letterToCheck; }  
                 newWordList.push(checkedList[wc]); 
-            }
+                checkedList= newWordList;
+                letterIndex++;
+            } else if (checkedList.length === 0 || wc == checkedList.length-1 && pickedWord.length == letterIndex) {letterIndex = 0;console.log("letterIndex:",letterIndex);  console.log("start again!");letterBlock.classList.remove("white"); console.log("pickedWord elseIf:",pickedWord); pickedWord= "";console.log("checkedList elseif: ",checkedList);checkedList=[];wc=checkedList.length;
+            } 
+            // else if(){}
         }
-        checkedList= newWordList;
+        
         newWordList=[];
-        letterIndex++;
+        
      }   
      
 
      function foundWord() {
-        if (wordList.length ===1 && wordList[0] === pickedWord) { alert("You've Found All The Words!!!");} else { alert(`You found ${pickedWord}`); }
-        console.log("word");
+    
+        if (wordList.length ===1 && wordList[0] === pickedWord) { alert("You've Found All The Words!!!");} else if (wordList.includes(pickedWord)) { alert(`You found ${pickedWord}`); document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";console.log("word");
         wordList = wordList.filter(e => e !== checkedList[0]);
-        console.log("shorter checkedList:",wordList);
+        console.log("shorter checkedList:",wordList);} else {alert("Word is not on the list");console.log("checkedList:",checkedList,",wordlist:",wordList,",letterIndex:",letterIndex);}
+        
        
-        document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";
+       
         pickedWord ='';
         newWordList = [];
         checkedList = wordList;
         console.log("new CheckList:",checkedList); 
         letterIndex=0;
+       
      }
   
 
@@ -299,7 +330,7 @@ checkedList = wordList;
     <>
     <div className="row padleft ohpercent pad5">
        
-        {rows.map((row,index) => {return <Row row={row} rowNum={index}/>})}
+        {rows.map((row,index) => {return <Row row={row} rowNum={index} indexRow={indexRows[index]}/>})}
     </div>
  
     <div className="padleft">
