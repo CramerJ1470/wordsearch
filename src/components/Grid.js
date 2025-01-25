@@ -34,7 +34,8 @@ class GridBlock {
         this.letter = " ";
         this.lastcolor = "rgb(95, 38, 109)";
         this.backgroundcolor = "rgb(95, 38, 109)";
-
+        this.classes = ["letterblock"];
+        this.direction ="";
     }
 }
 
