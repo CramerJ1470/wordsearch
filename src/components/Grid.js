@@ -268,11 +268,13 @@ for (let l = 0; l <= listLength;l++){
 let pickedWord ="";
 let newWordList=[];
 let letterIndex = 0;
-
+ 
   function startPlay() {
    console.log("start Play wordList:",wordList);
-   document.getElementById("startplay").style.visibility = "hidden";
-   document.getElementById("foundword").style.display = "block";
+   document.getElementById("startplay").style.display="none";
+   document.getElementById("foundword").style.visibility = "visible";
+   document.getElementById("restartgame").style.visibility = "visible";
+
 checkedList = wordList;
     let squares = document.querySelectorAll(".letterblock");
     gofind = true;
@@ -285,7 +287,7 @@ checkedList = wordList;
       }
       function changecolor(e) {
         let letterToCheck = e.target.textContent;
-        let letterBlock = Number(e.target.name);
+        let letterBlock = e.target;
         console.log("Letterblock:",letterBlock);
         e.target.classList.add("white");    
         console.log(letterToCheck);    
@@ -327,22 +329,20 @@ checkedList = wordList;
      }
   
 
+     function restartgame() {
+        window.location.reload();
+     }
+     async function saveboard() {
+
+     }
+
   return (
     <>
     <div className="row padleft ohpercent pad5">
        
         {rows.map((row,index) => {return <Row row={row} rowNum={index} indexRow={indexRows[index]}/>})}
     </div>
- 
-    <div className="padleft">
-    <button id="startplay" className="bottombutton" onClick={startPlay}>Start</button>
-    </div>
- 
-    <div className="padleft"> 
-    <button id="foundword" className="bottombutton"  onClick={foundWord}>Found Word</button>
-    </div>
-  
-    </>
+     </>
   )
 }
 

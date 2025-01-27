@@ -10,6 +10,7 @@ import InputWords from './components/InputWords';
 import NewGrid from './components/NewGrid';
 import Home from "./components/Home";
 import WordListContext from './context/WordListContext';
+import AuthContext from "./context/AuthContext";
 import RenderOnceContext from './context/RenderOnceContext';
 import Landing from './components/Landing';
 
@@ -17,7 +18,7 @@ import Landing from './components/Landing';
 
 export const App=()=> {
 
- 
+  const [isAuth, setIsAuth] = useState();
   const [wordList, setWordList] = useState([]);
 
 
@@ -34,6 +35,7 @@ export const App=()=> {
     <>
 
     <BrowserRouter>
+    <AuthContext.Provider value={{ isAuth: isAuth, setIsAuth }}>
    <WordListContext.Provider
 					value={{
 						wordList: wordList,
@@ -43,7 +45,7 @@ export const App=()=> {
 	    <Routes>
         <Route
            path="/"
-           element={<Landing wordList={wordList}/>}
+           element={<Landing wordList={wordList} isAuth={isAuth}/>}
         />
        
       
@@ -56,6 +58,7 @@ export const App=()=> {
        
       </Routes>
       </WordListContext.Provider>
+      </AuthContext.Provider>
     </BrowserRouter>
     </>
   );

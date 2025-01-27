@@ -5,6 +5,8 @@ import InputWords from './InputWords';
 import WordListContext from '../context/WordListContext';
 import Directions from './Directions';
 import "./block.css";
+import ButtonsAtBottom from './ButtonsAtBottom';
+import RegisterOrStart from './RegisterOrStart';
 
 const {rendered} = require("./rendered");
 
@@ -91,12 +93,13 @@ const [wordList,setWordList] = useState(wordList1);
 
 
   return (
+    <>
     <div className="home1">
       <img className="wholebg bgpic"/>
          <div className="container-fluid ">
         <div className="row width">
         <div className=" col-lg-3">
-          <Directions/>
+          <Directions gri={grid} wordList={wordList}/>
         </div>
     
      
@@ -110,7 +113,7 @@ const [wordList,setWordList] = useState(wordList1);
     <div className="vertflex " >
       {searchWords.map((word)=> {return <><div className="word" id={word} key={word}>{word}</div></>})}
     </div>
-    <button className="bottomb" onClick={makeOwnWords}>Make My Own Words</button>
+    <button className="bottomb" id="makeownwords" onClick={makeOwnWords}>Make My Own Words</button>
     </div>
     <div id="inputWords" >
     <div className="vertflex">
@@ -125,7 +128,10 @@ const [wordList,setWordList] = useState(wordList1);
       </div>
       </div>
     </div>
+<ButtonsAtBottom grid={grid} wordList={wordList}/>
     </div>
+    <RegisterOrStart/>
+    </>
   )
 }
 

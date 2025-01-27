@@ -7,12 +7,12 @@
 
 .titleblock {
 	border: 0.4rem groove rgb(138, 240, 36);
-	border-radius: 1rem;
+	border-radius: 10px;
 	padding: .5rem;
 	font-size: 3.5rem;
 	font-weight: bold;
 	background-color: rgb(95, 38, 109);
-	width: 52.5rem;
+	
 	text-align: center;
 	color: rgb(138, 240, 36);
 
@@ -146,8 +146,10 @@ p.littlesquare {
 }
 
 .bottombutton {
-	margin:1.5rem;
+	position: absolute;
 	border-radius: 10px;
+	top: 33rem;
+	left: 40%;
 	background-color:rgb(138, 240, 36) ;
 	color: rgb(95, 38, 109);
 	font-size: 1.5rem;
@@ -158,8 +160,9 @@ p.littlesquare {
 
 
 .bottombtn {
-	margin-top: 1rem;
+	margin-top: 15.5rem;
 	border-radius: 10px;
+	margin-left: 3rem;
 	background-color:rgb(138, 240, 36) ;
 	color: rgb(95, 38, 109);
 	font-size: 1.5rem;
@@ -168,18 +171,32 @@ p.littlesquare {
 	width: 20rem;
 }
 	
-
-#foundword {
-	display: none;
-	margin-left: 12.5rem;
-	
-	
+button#foundword {
+	margin-top: 10rem;
+	margin-left:-6rem;
+	font-size: 1.5rem;
+	width: 18rem;
 }
+
+button#restartgame {
+	margin-top: 16rem;
+	margin-left:-6rem;
+	font-size: 1.5rem;
+	width: 18rem;
+}
+
+
+#saveboard {
+	visibility: visible;
+} 
+
+
+
 
 .rightside  {
 	border: 0.4rem groove rgb(138, 240, 36);
 	justify-content: center;
-	border-radius: 1rem;
+	border-radius: 10px;
 	padding: .5rem;
 	font-size: 1.5rem;
 	font-weight: bold;
@@ -193,7 +210,7 @@ p.littlesquare {
 	 
 		border: 0.4rem groove rgb(138, 240, 36);
 		justify-content: center;
-		border-radius: 1rem;
+		border-radius: 10px;
 		padding: .5rem;
 		font-weight: bold;
 		background-color: rgb(95, 38, 109);
