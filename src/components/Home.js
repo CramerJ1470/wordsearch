@@ -84,12 +84,13 @@ const [wordList,setWordList] = useState(wordList1);
                newWordDoc.style.display="block";
                let inputWordDoc = document.getElementById("inputWords");
                inputWordDoc.style.display = "none";
-              //  console.log("LATER WORDlIST:",wordList);hW
+              //  console.log("LATER WORDlIST:",wordList);
              
            }
           
 
            let searchWords = wordList;
+          
 
 
   return (
