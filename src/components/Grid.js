@@ -315,10 +315,9 @@ checkedList = wordList;
      function foundWord() {
     
         if (wordList.length ===1 && wordList[0] === pickedWord) { alert("You've Found All The Words!!!");} else if (wordList.includes(pickedWord)) { alert(`You found ${pickedWord}`); document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";console.log("word");
-        wordList = wordList.filter(e => e !== checkedList[0]);
-        console.log("shorter checkedList:",wordList);} else {alert("Word is not on the list");console.log("checkedList:",checkedList,",wordlist:",wordList,",letterIndex:",letterIndex);}
-        
-       
+        wordList = wordList.filter(e => e !== checkedList[0]);}
+        else {alert("Word is not on the list");}
+           
        
         pickedWord ='';
         newWordList = [];

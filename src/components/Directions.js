@@ -47,7 +47,9 @@ function Directions({grid,wordList}) {
       
       function foundWord() {
          
-        if (wordList.length ===1 && wordList[0] === pickedWord) { document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";alert("You've Found All The Words!!!"); document.getElementById("makeownwords").classList.remove("hiddenorig");} else if (wordList.includes(pickedWord)) { alert(`You found ${pickedWord}`); document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";
+        if (wordList.length ===1 && wordList[0] === pickedWord) { document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";alert("You've Found All The Words!!!"); document.getElementById("startplay").classList.remove("hiddenorig");
+        document.getElementById("foundword").classList.add("hiddenorig");
+        document.getElementById("restartgame").classList.add("hiddenorig");document.getElementById("makeownwords").classList.remove("hiddenorig");} else if (wordList.includes(pickedWord)) { alert(`You found ${pickedWord}`); document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";
         wordList = wordList.filter(e => e !== checkedList[0]);
         } else {alert("Word is not on the list");}
         
