@@ -67,7 +67,7 @@ function buildGrid() {
       return builtgrid;
   }
 
-console.log("gridBlocks:",gridBlocks);
+// console.log("gridBlocks:",gridBlocks);
 
 const addWordToGrid =(tempWord,grid)=> {
   let numberObjects = [];
