@@ -249,6 +249,7 @@ button#restartgame {
 }
 
 .purpletext {
+	width: 25rem;
 	color: rgb(95, 38, 109);
 }
 
