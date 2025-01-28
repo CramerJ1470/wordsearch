@@ -57,9 +57,14 @@
 
 .white {
 	color: rgb(95, 38, 109);
-	background-color: rgb(138, 240, 36);
+	background-color: white;
 }
 
+
+.yellow {
+	color: rgb(95, 38, 109);
+	background-color: rgb(138, 240, 36);  
+}
 
 
 
@@ -223,6 +228,12 @@ button#restartgame {
 	text-align:center;
 }
 
+.padleft1 {
+	margin: auto;
+	justify-content: center;
+	text-align:center;
+}
+
 .bottomb {
 	margin-top: 1rem;
 	border-radius: 10px;
@@ -255,4 +266,8 @@ button#restartgame {
 
 .width40p {
 	width: 50%;
+}
+
+.marginauto {
+	margin: auto;
 }

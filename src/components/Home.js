@@ -75,6 +75,11 @@ const [wordList,setWordList] = useState(wordList1);
                 // console.log("forname:",forName);
                 let newWordValue = document.getElementById(`word${tenWords}`).value;
                 // console.log("newWordValue:",newWordValue);
+                let splitNewWordValue = newWordValue.split("");
+                for (let letterloop = 0; letterloop< splitNewWordValue.length; letterloop++) {
+                  splitNewWordValue[letterloop]= splitNewWordValue[letterloop].toUpperCase();
+                }
+                newWordValue = splitNewWordValue.join("");
                 words1.push(newWordValue);
             
                }
@@ -104,7 +109,7 @@ const [wordList,setWordList] = useState(wordList1);
         </div>
     
      
-        <div className="col-lg-6">
+        <div className="col-lg-6 padleft1">
           <Grid grid={grid} wordList={wordList}/>
         </div>
     

@@ -27,11 +27,11 @@ function Grid({grid, wordList}) {
 let gridBlocks = {};
 let searchWords = wordList;
 class GridBlock {
-    constructor(index,loc) {
+    constructor(index,loc,letter) {
         this.location = Number(loc);
         this.index = index;
         this.picked = false;
-        this.letter = " ";
+        this.letter =  letter;
         this.lastcolor = "rgb(95, 38, 109)";
         this.backgroundcolor = "rgb(95, 38, 109)";
         this.classes = ["letterblock"];
@@ -258,19 +258,38 @@ let listLength = list.length;
 let rows= [];
 let row=[];
 
+// Use indexFromObjects //
+
+let list1 = vals;
+let indexRow1 = [];
+let indexRows1 =[];
+let listLength1 = list1.length;
+let rows1 = [];
+let row1 =[];
+
 
 for (let l = 0; l <= listLength;l++){
   // if (yadd===0 && l ===0) {rows.push("0000");}
     if (l%15===0){rows.push(row);row=[];row.push(list[l]);indexRows.push(indexRow);indexRow=[];indexRow.push(indexFromObjects[l]);}
-       else row.push(list[l]);indexRow.push(indexFromObjects[l]);
+       else {row.push(list[l]);indexRow.push(indexFromObjects[l]);}
+  
+
+  
+   
+  if (l%15===0){rows1.push(row1);row1=[];let block = new GridBlock (l,indexFromObjects[l],list1[l]); row1.push(block);}
+  else {let block = new GridBlock (l,indexFromObjects[l],list1[l]); row1.push(block);}
   }
+
+  rows1.shift();
+ 
+
   let checkedList = [];
 let pickedWord ="";
 let newWordList=[];
 let letterIndex = 0;
  
   function startPlay() {
-   console.log("start Play wordList:",wordList);
+   
    document.getElementById("startplay").style.display="none";
    document.getElementById("foundword").style.visibility = "visible";
    document.getElementById("restartgame").style.visibility = "visible";
@@ -288,14 +307,14 @@ checkedList = wordList;
       function changecolor(e) {
         let letterToCheck = e.target.textContent;
         let letterBlock = e.target;
-        console.log("Letterblock:",letterBlock);
+      
         e.target.classList.add("white");    
-        console.log(letterToCheck);    
-        console.log("letterIndexCC: ",letterIndex);
+           
+      
         for (let wc = 0; wc < checkedList.length; wc++) {
-            console.log("wc :",wc);
+           
 
-            console.log(checkedList[wc][letterIndex]);
+          
             if (checkedList[wc][letterIndex] === letterToCheck) {
                 if (pickedWord.length == 0  && letterIndex==0) {pickedWord = letterToCheck;} 
                 else if (pickedWord.length == letterIndex) {pickedWord=pickedWord+letterToCheck; }  
@@ -322,7 +341,7 @@ checkedList = wordList;
         pickedWord ='';
         newWordList = [];
         checkedList = wordList;
-        console.log("new CheckList:",checkedList); 
+      
         letterIndex=0;
        
      }
@@ -335,11 +354,13 @@ checkedList = wordList;
 
      }
 
+    
+
   return (
     <>
-    <div className="row padleft ohpercent pad5">
+    <div className="row padleft ohpercent pad5" key="rows">
        
-        {rows.map((row,index) => {return <Row row={row} rowNum={index} indexRow={indexRows[index]}/>})}
+        {rows1.map((row1,index) => {return <Row row1={row1} rowNum={index}/>})}
     </div>
      </>
   )

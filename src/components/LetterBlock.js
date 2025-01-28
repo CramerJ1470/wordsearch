@@ -5,15 +5,18 @@ import './block.css';
 
 
 
-const LetterBlock =({letter,index,rowNum,letterKey}) =>{
+const LetterBlock =({letterblock}) =>{
+ 
+ const {location,index,picked,letter,lastcolor,backgroundcolor,classes,direction} = letterblock;
 
-  let squarekey= rowNum.toString()+letter.toString()+index.toString();
+
+  let squarekey= location.toString()+letter.toString()+index.toString();
 
     return (
     <>
-    <button  className="letterblock" key={squarekey} name={letterKey}>
+    <button  className="letterblock" key={squarekey} name={location}>
       
-      {letter.toUpperCase()}
+      {letter}
      </button>
      </>
   )
