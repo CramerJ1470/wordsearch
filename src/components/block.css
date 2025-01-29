@@ -22,13 +22,16 @@
 	padding: 0.5rem;
 }
 
+.padleft6 {
+	padding-left: .6rem;
+}
+
 
 .letterblock {
 	background-color: rgb(95, 38, 109);
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 3.8rem;
+	height: 3.8rem;
 	border: 0.4rem groove rgb(138, 240, 36);
-
 	overflow:hidden;
 	color: rgb(138, 240, 36);
 	font-size: 1.5rem;
@@ -183,11 +186,35 @@ button#foundword {
 	width: 18rem;
 }
 
+button#restartword {
+	margin-top: 13rem;
+	margin-left:-6rem;
+	font-size: 1.5rem;
+	width: 18rem;
+}
+
 button#restartgame {
 	margin-top: 16rem;
 	margin-left:-6rem;
 	font-size: 1.5rem;
 	width: 18rem;
+}
+
+#alertwindow {
+	position: absolute;
+	top: 2rem;
+	height: 5rem;
+	padding-top: 1rem;
+	width: auto;
+	border: 0.4rem groove rgb(138, 240, 36);
+	border-radius: 10px;
+	z-index: 3;
+	-moz-text-shadow: 2px 1px 10px rgb(95, 38, 109);
+	-webkit-text-shadow: 2px 1px 10px rgb(95, 38, 109) .5;
+  	text-shadow: 1px 1px 2px  rgb(95, 38, 109) .5;
+	font-size: 2rem;
+	font-weight:bold ;
+	padding: auto;
 }
 
 
@@ -206,7 +233,7 @@ button#restartgame {
 	font-size: 1.5rem;
 	font-weight: bold;
 	background-color: rgb(95, 38, 109);
-	height: 52.5rem;
+	height: 57rem;
 	
 }
 
@@ -219,7 +246,7 @@ button#restartgame {
 		padding: .5rem;
 		font-weight: bold;
 		background-color: rgb(95, 38, 109);
-		height: 52.5rem;
+		height: 57rem;
 		
 }	 
 

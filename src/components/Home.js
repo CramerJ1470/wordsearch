@@ -137,7 +137,7 @@ const [wordList,setWordList] = useState(wordList1);
     </div>
 <ButtonsAtBottom grid={grid} wordList={wordList}/>
     </div>
-    <RegisterOrStart/>
+  {/* <RegisterOrStart/> */}
     </>
   )
 }
