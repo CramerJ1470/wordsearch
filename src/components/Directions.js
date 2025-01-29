@@ -181,7 +181,6 @@ function Directions({grid,wordList}) {
 
           for (let pw = 0;pw< pickedWord.length; pw++) {let letter = pickedWord[pw].location; for (let el =0; el < elems.length; el++) {if (Number(elems[el].name) === letter) {elems[el].classList.remove("white");elems[el].classList.add("yellow");}}}
           pickedWord = [];
-
    }
 
   
@@ -194,7 +193,7 @@ function foundWord() {
     document.getElementById(`${wordToCheck}`).style.color="rgb(95, 38, 109)";
     fwChangeColor(true);
     openAlert(); alertWindow.innerText ="You've Found All The Words!!!"; 
-    document.getElementById("startplay").classList.remove("hiddenorig");
+    // document.getElementById("startplay").classList.remove("hiddenorig");
     document.getElementById("foundword").classList.add("hiddenorig");
     document.getElementById("restartgame").classList.add("hiddenorig");
     document.getElementById("restartword").classList.add("hiddenorig");

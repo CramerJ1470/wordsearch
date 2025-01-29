@@ -61,6 +61,7 @@
 .white {
 	color: rgb(95, 38, 109);
 	background-color: white;
+	z-index:4;
 }
 
 
