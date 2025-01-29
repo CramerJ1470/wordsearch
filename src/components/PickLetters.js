@@ -2,24 +2,22 @@ import React from 'react'
 
 function PickLetters() {
 
-    function pickletter(e) {
-        class PickedGridBlock {
-            constructor(index,loc) {
-                this.location = Number(loc);
-                this.index = index;
-                this.picked = false;
-                this.letter = " ";
-                this.lastcolor = "rgb(95, 38, 109)";
-                this.backgroundcolor = "rgb(95, 38, 109)";
-                this.classes = ["letterblock"];
-                this.direction ="";
-            }
+    class PickedGridBlock {
+        constructor(index,loc) {
+            this.location = Number(loc);
+            this.index = index;
+            this.picked = false;
+            this.letter = " ";
+            this.lastcolor = "rgb(95, 38, 109)";
+            this.backgroundcolor = "rgb(95, 38, 109)";
+            this.classes = ["letterblock"];
+            this.direction ="";
         }
+    }
 
 
-
-
-        let letterToCheck = e.target.textContent;
+    function pickletter(e) {
+       let letterToCheck = e.target.textContent;
         let letterBlock = Number(e.target.name);
         //change block color to wgite to show its picked //
         e.target.classList.add("white");    
@@ -53,32 +51,7 @@ function PickLetters() {
 
 
   return (
-    //Grid  //
-    <>
-    <div className="row padleft ohpercent pad5">
-       
-        {rows1.map((row1) => {return <Row row1={row1}/>})}
-    </div>
-     </>
-
-
-
-    // Row   change parameter to just row1 // 
-    <div className="rowflex">
-    {row1.map((letterblock) => {let letterToPick = Math.floor(Math.random()*26); if(letterblock.letter !== " ") { return <LetterBlock letterblock={letterblock}/>;} else {letterblock.letter = alphabet[letterToPick]; return <LetterBlock letterblock={letterblock}/>;}})}
-  
-</div>
-
-    // LetterBlock change parameters to letterblock //
-
-    <button  className="letterblock" key={squarekey} name={letterKey}>
-      
-    {letter.toUpperCase()}
-   </button>
-   </>
-
-
-  )
+   
 }
 
 export default PickLetters

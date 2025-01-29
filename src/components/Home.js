@@ -83,6 +83,7 @@ const [wordList,setWordList] = useState(wordList1);
                 words1.push(newWordValue);
             
                }
+               words1= words1.filter(e => e !== "");
                setWordList(words1);
 
                let newWordDoc = document.getElementById("newWords");
@@ -92,7 +93,7 @@ const [wordList,setWordList] = useState(wordList1);
               //  console.log("LATER WORDlIST:",wordList);
              
            }
-          
+           
 
            let searchWords = wordList;
           

@@ -269,16 +269,19 @@ let row1 =[];
 
 
 for (let l = 0; l <= listLength;l++){
+   
+    if (l%15===0){rows1.push(row1);row1=[];let block = new GridBlock (l,indexFromObjects[l],list1[l]); row1.push(block);}
+    else {let block = new GridBlock (l,indexFromObjects[l],list1[l]); row1.push(block);}
+}
+
+
   // if (yadd===0 && l ===0) {rows.push("0000");}
-    if (l%15===0){rows.push(row);row=[];row.push(list[l]);indexRows.push(indexRow);indexRow=[];indexRow.push(indexFromObjects[l]);}
-       else {row.push(list[l]);indexRow.push(indexFromObjects[l]);}
+    // if (l%15===0){rows.push(row);row=[];row.push(list[l]);indexRows.push(indexRow);indexRow=[];indexRow.push(indexFromObjects[l]);}
+    //    else {row.push(list[l]);indexRow.push(indexFromObjects[l]);}
   
 
   
-   
-  if (l%15===0){rows1.push(row1);row1=[];let block = new GridBlock (l,indexFromObjects[l],list1[l]); row1.push(block);}
-  else {let block = new GridBlock (l,indexFromObjects[l],list1[l]); row1.push(block);}
-  }
+
 
   rows1.shift();
  

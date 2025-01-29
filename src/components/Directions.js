@@ -27,6 +27,7 @@ function Directions({grid,wordList}) {
          let letterToCheck = e.target.textContent;
        
          let letterBlock = Number(e.target.name);
+         
          e.target.classList.add("yellow");    
          for (let wc = 0; wc < checkedList.length; wc++) {
           if (checkedList[wc][letterIndex] === letterToCheck) {
