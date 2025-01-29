@@ -69,7 +69,6 @@ function Directions({grid,wordList}) {
 
        let alertWindow = document.getElementById("alertp");
 
-       console.log("alertWindow:",alertWindow);
       function changecolor(e) {
         e.preventDefault();
         let letterToCheck = e.target.textContent;
@@ -83,14 +82,14 @@ function Directions({grid,wordList}) {
       
         for (let wc = 0; wc < checkedList.length; wc++) {
              // if its the first letter  //
-             console.log(checkedList[wc][letterIndex],":",letterToCheck);
+           
             if (checkedList[wc][letterIndex] === letterToCheck) {
                    
-                    if (letterIndex==0) {console.log("0:0");pickedWord[letterIndex] = new GridBlock(letterIndex, letterLoc, letterToCheck); 
+                    if (letterIndex==0) {pickedWord[letterIndex] = new GridBlock(letterIndex, letterLoc, letterToCheck); 
                         pickedWord[letterIndex].picked = true; pickedWord[letterIndex].classes.push("white");pickedWord[letterIndex].backgroundcolor= "white"; 
                         newWordList.push(checkedList[wc]); 
                         
-                    } else if (letterIndex ===1) {console.log("lenght1"); let newDirNum = pickedWord[letterIndex-1].location-letterLoc; 
+                    } else if (letterIndex ===1) { let newDirNum = pickedWord[letterIndex-1].location-letterLoc; 
                         if (directNums.includes(newDirNum)) { 
                            pickedWord[letterIndex-1].direction = newDirNum; 
                             pickedWord[letterIndex] = new GridBlock(letterIndex, letterLoc, letterToCheck); pickedWord[letterIndex].picked = true; 
@@ -101,10 +100,10 @@ function Directions({grid,wordList}) {
                         if (pickedWord[letterIndex-1].direction===newDirNum) { 
                             pickedWord[letterIndex] = new GridBlock(letterIndex, letterLoc, letterToCheck); pickedWord[letterIndex].picked = true; 
                             pickedWord[letterIndex].classes.push("white");pickedWord[letterIndex].backgroundcolor= "white"; pickedWord[letterIndex].direction = newDirNum;
-                            newWordList.push(checkedList[wc]); console.log("newWordList ===: ",newWordList);
+                            newWordList.push(checkedList[wc]); 
                         } else {openAlert(); alertWindow.textContent ="two letters not following the corrent direction";
                         }
-                    } else {console.log(`letter with word ${checkedList[wc]} doesn't work`);}
+                    } else {openAlert(); alertWindow.textContent =`letter with word ${checkedList[wc]} doesn't work`;}
             } else if (checkedList[wc][letterIndex] !== letterToCheck) {
             // else if (checkedList.length === 0 || wc == checkedList.length-1 && pickedWord.length == letterIndex) {
             //         //change all letters to yellow from newWordList //        
@@ -117,7 +116,7 @@ function Directions({grid,wordList}) {
              }
             }     
         if (newWordList.length ===0) {
-            console.log("letter didn't fit any words"); e.target.classList.remove("white");
+          openAlert(); alertWindow.textContent ="letter didn't fit any words"; fwChangeColor(pickedWord);
         } else {          
             letterIndex++;
             checkedList=newWordList;
@@ -152,8 +151,7 @@ function Directions({grid,wordList}) {
 
    function clearWord(pickedWord) {
     let elems = document.getElementsByClassName("letterblock");
-  console.log("pickedWord clear:",pickedWord);
-    for (let pw = 0;pw< pickedWord.length; pw++) {
+     for (let pw = 0;pw< pickedWord.length; pw++) {
       let letter = pickedWord[pw].location; for (let el =0; el < elems.length; el++) {
         if (Number(elems[el].name) === letter) {elems[el].classList.remove("white");}
       }
@@ -176,7 +174,6 @@ function foundWord() {
        
   if (wordList.length ===1 && wordList[0] === wordToCheck) { 
     document.getElementById(`${wordToCheck}`).style.color="rgb(95, 38, 109)";
-    console.log("pickedWord in fw: ",pickedWord);
     fwChangeColor(pickedWord);
     openAlert(); alertWindow.innerText ="You've Found All The Words!!!"; 
     document.getElementById("startplay").classList.remove("hiddenorig");
@@ -187,7 +184,6 @@ function foundWord() {
     openAlert(); alertWindow.innerText =`You found ${wordToCheck}`; 
     document.getElementById(`${wordToCheck}`).style.color="rgb(95, 38, 109)";
     wordList = wordList.filter(e => e !== checkedList[0]);
-    console.log("pickedWord in fw: ",pickedWord);
     fwChangeColor(pickedWord);
   } else {openAlert(); alertWindow.innerText ="Word is not on the list"; clearWord(pickedWord);}
   
