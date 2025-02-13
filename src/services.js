@@ -4,7 +4,7 @@
 // import { useContext } from "react";
 // import Block from "./scripts/Block";
 export const login = async (username, password, applyFunc) => {
-	const url = "http://localhost:8090/api/users/login";
+	const url = "http://localhost:8090/apisnft/users/login";
 	const body = JSON.stringify({ username: username, password: password });
 	console.log(`body: before LC:`, body);
 	const headers = { "Content-Type": "application/json" };
@@ -32,7 +32,7 @@ export const login = async (username, password, applyFunc) => {
 };
 
 export const register = async (username, password) => {
-	const url = "http://localhost:8090/api/users/register";
+	const url = "http://localhost:8090/apisnft/users/register";
 	const body = JSON.stringify({ username, password });
 	const headers = { "Content-Type": "application/json" };
 	const res = await fetch(url, { method: "POST", body, headers });
@@ -41,7 +41,7 @@ export const register = async (username, password) => {
 };
 
 export const logout = async () => {
-	const url = "http://localhost:8090/api/users/logout";
+	const url = "http://localhost:8090/apisnft/users/logout";
 	const { token } = JSON.parse(localStorage.getItem("userData"));
 	const headers = {
 		"Content-Type": "application/json",
@@ -69,7 +69,7 @@ export const getUser = async (userId) => {
 
 /************Playingboards  Section ***************** */
 export const getSavedBoards = async (applyFunc) => {
-	const url = "http://localhost:8090/api/playingboards";
+	const url = "http://localhost:8090/apisnft/wsboards";
 
 	try {
 		
@@ -149,7 +149,7 @@ export const addPlayingboard = async (rows, userId) => {
 	// console.log(headers);
 	try {
 		const response = await fetch(
-			"http://localhost:8090/api/playingboards/post",
+			"http://localhost:8090/apisnft/wsboards/post",
 			{ method: "POST", headers: headers, body: body }
 		);
 		const data = await response.json();
