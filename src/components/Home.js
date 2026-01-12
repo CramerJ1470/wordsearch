@@ -17,8 +17,8 @@ let rendered1 = rendered;
 
 
 let wordList1= ["BENIGN","BEING","BEET","BEIGE","HINTING","NIGHT","EIGHT","THING","ENGINE","GENIE"];
-function Home() {
-
+function Home({registered}) {
+console.log("registered Home: ",registered);
      
 const [wordList,setWordList] = useState(wordList1);
 
@@ -106,7 +106,7 @@ const [wordList,setWordList] = useState(wordList1);
          <div className="container-fluid ">
         <div className="row width">
         <div className=" col-lg-3">
-          <Directions gri={grid} wordList={wordList}/>
+          <Directions registered={registered} grid={grid} wordList={wordList}/>
         </div>
     
      

@@ -292,10 +292,11 @@ let newWordList=[];
 let letterIndex = 0;
  
   function startPlay() {
-   
+  
    document.getElementById("startplay").style.display="none";
    document.getElementById("foundword").style.visibility = "visible";
-   document.getElementById("restartgame").style.visibility = "visible";
+      document.getElementById("restartgame").style.visibility = "visible";
+   
 
 checkedList = wordList;
     let squares = document.querySelectorAll(".letterblock");

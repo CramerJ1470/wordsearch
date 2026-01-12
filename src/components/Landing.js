@@ -5,6 +5,7 @@ import AuthContext from "../context/AuthContext";
 
 function Landing() {
   const { setIsAuth, isAuth } = useContext(AuthContext);
+ let registered = localStorage.getItem("registered");
 
   return (
     <>
@@ -21,7 +22,7 @@ function Landing() {
     </div>
 
         <div className="home">
-            <Home/>
+            <Home registered={registered}/>
         </div>
         
         </>

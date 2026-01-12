@@ -1,4 +1,5 @@
 import React from 'react';
+import RegisterOrStart from './RegisterOrStart';
 class GridBlock {
   constructor(index,loc,letter) {
       this.location = Number(loc);
@@ -12,9 +13,9 @@ class GridBlock {
   }
 }
 
-function Directions({grid,wordList}) {
+function Directions({registered, grid,wordList}) {
 
-
+console.log("Directions registered",registered);
   let gofind = false;
   let checkedList = [];
  let pickedWord = [];
@@ -22,13 +23,23 @@ function Directions({grid,wordList}) {
   let letterIndex = 0;
 
   function startPlay() {
+    if (localStorage.getItem("registered") === "true") {
+      registered = true;
+    }
     document.getElementById("startplay").classList.add("hiddenorig");
+  
+    
     document.getElementById("foundword").classList.remove("hiddenorig");
     document.getElementById("restartword").classList.remove("hiddenorig");
     document.getElementById("restartgame").classList.remove("hiddenorig");
-
     document.getElementById("makeownwords").classList.add("hiddenorig");
-    document.getElementById("restartgame").classList.remove("hiddenorig");
+
+    
+    if (registered !== true) {
+      document.getElementById("startplay").classList.add("hiddenorig");
+      document.getElementById("regorstart").classList.add("hiddenorig");
+      localStorage.setItem("registered", "true");}
+
  checkedList = wordList;
      let squares = document.querySelectorAll(".letterblock");
      gofind = true;
@@ -41,7 +52,7 @@ function Directions({grid,wordList}) {
        }
       //  function changecolor(e) {
       //    let letterToCheck = e.target.textContent;
-       
+      
       //    let letterBlock = Number(e.target.name);
          
       //    e.target.classList.add("yellow");    
@@ -154,6 +165,7 @@ function Directions({grid,wordList}) {
   //    }
 
      function restartgame() {
+    
       location.reload();
    }
 
@@ -217,7 +229,6 @@ function foundWord() {
 
 
 
-
   return (
     <div className="greentext rightside">
       <ul>Directions
@@ -229,7 +240,9 @@ function foundWord() {
         <li>We will be adding more functionality/features</li>
 
       </ul>
-      <button id="startplay" className="startbtn bottombtn" onClick={startPlay}>Start</button>
+      <RegisterOrStart registered={registered} startPlay= {startPlay}/>
+     
+      <button id="startplay" className="startbtn bottombtn hiddenorig" onClick={startPlay}>Start</button>
     <button id="foundword" className="bottombutton hiddenorig"  onClick={foundWord}>Found Word</button>
     <button id="restartword" className="bottombutton hiddenorig"  onClick={restartword}>Restart Word</button>
     <button id="restartgame" className="bottombutton hiddenorig"  onClick={restartgame}>Restart Game</button>

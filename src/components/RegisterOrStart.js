@@ -2,10 +2,17 @@ import React, { useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
+
 import useInput from "../hooks/useInput";
 import { login, register, logout} from "../services";
+let registered;
 
-const RegisterOrStart = () => {
+function RegisterOrStart ({registered, startPlay}) {
+	console.log("StartPlay prop:",startPlay);
+
+		console.log("registered prop:",registered);
+	
+	
 	const navigate = useNavigate();
 	const { setIsAuth, isAuth } = useContext(AuthContext);
 
@@ -61,12 +68,16 @@ const RegisterOrStart = () => {
 		e.preventDefault();
 		
 		// await login(username, password, setIsAuth);
-	alert("submit function not deployed");
+	alert("submit function deployed");
+	
 		//gotoGame();
 		loggedindiv();
 	};
 
 	function loggedindiv() {
+		document.getElementById("startplay").classList.remove("hiddenorig");
+		document.getElementById("regorstart").classList.add("hiddenorig");
+		
 		// disappearRegister();
 		// disappearGuest();
 		// disappearLogin();
@@ -119,9 +130,10 @@ const RegisterOrStart = () => {
 
 	const guestplayHandler = (e) => {
 		e.preventDefault();
+
 		document.getElementById("startplay").classList.remove("hiddenorig");
 		document.getElementById("regorstart").classList.add("hiddenorig");
-		alert("guest play function not deployed");
+		alert("guest play function deployed");
 		};
 
 	const savedboardsview = () => {
@@ -135,10 +147,18 @@ const RegisterOrStart = () => {
 		alert("build a board function not deployed");
 	};
 
-	return (
+
+	console.log("registered RegorStart:",registered);
+	if (registered ==="false") {registered = false;} 
+
+
+	
+	return (<div>
+		{!registered ? ( 
 		<div className="regorstart" id="regorstart">
+			
 			<div className="register">
-				<button className="btn" id="register" onClick={openRegister}>
+				<button className="serverbtn" id="register" onClick={openRegister}>
 					Register
 				</button>
 				<div id="reg">
@@ -189,8 +209,8 @@ const RegisterOrStart = () => {
 				</div>
 			</div>
 			<div className="login1" id="login1">
-				<button className="btn" id="login2" onClick={openLogin}>
-					Login
+				<button className="serverbtn" id="login2" onClick={openLogin}>
+										Login
 				</button>
 				<div id="log">
 					<div className="form-outline mb-4 ">
@@ -240,7 +260,7 @@ const RegisterOrStart = () => {
 				</div>
 			</div>
 			<div className="guest" id="guest">
-				<button className="btn" onClick={guestplayHandler}>
+				<button className="serverbtn" onClick={guestplayHandler}>
 					Guest
 				</button>
 			</div>
@@ -269,8 +289,13 @@ const RegisterOrStart = () => {
 					Logout
 				</button>
 			</div>
-		</div>
+					</div>):(<div id = "registered"><button
+  id="startplay"
+  className="startbtn bottombtn"
+  onClick={startPlay}
+>
+  Start
+</button></div>)}</div>
 	);
-};
-
-export default RegisterOrStart;
+	};
+	export default RegisterOrStart;

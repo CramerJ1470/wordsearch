@@ -12,6 +12,10 @@ function ButtonsAtBottom({grid,wordList}) {
         document.getElementById("startplay").style.display="none";
         document.getElementById("foundword").style.visibility = "visible";
         document.getElementById("restartgame").style.visibility = "visible";
+        if (localStorage.getItem("registered") !== "true") {
+          document.getElementById("startplay").classList.remove("hiddenorig");
+          document.getElementById("regorstart").classList.add("hiddenorig");}
+      
      
      checkedList = wordList;
          let squares = document.querySelectorAll(".letterblock");
@@ -68,7 +72,9 @@ function ButtonsAtBottom({grid,wordList}) {
        
      
           function restartgame() {
-             window.location.reload();
+            localStorage.setItem("registered",true);
+            window.location.reload();
+          
           }
           async function saveboard() {
      
@@ -81,7 +87,7 @@ function ButtonsAtBottom({grid,wordList}) {
     
       <div className="padleft">
    
-    <button id="foundword" className="bottombutton hiddenorig"  onClick={foundWord}>Found Word</button>
+    <button id="foundword" className="bottombutton hiddenorig"  onClick={foundWord}>Found Word1</button>
     <button id="restartgame" className="bottombutton hiddenorig"  onClick={restartgame}>Restart Game</button>
     <button id="saveboard" className="bottombutton hiddenorig"  onClick={saveboard}>Save Board</button>
     

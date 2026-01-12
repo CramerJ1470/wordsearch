@@ -208,12 +208,9 @@ img {
 
 
 .regorstart {
-	position: absolute;
-	top: 33rem;
-	left: 50%;
-	transform: translateY(-80%) translateX(-50%);
-	width: 30rem;
-	height: 18.25rem;
+	/* left: 2.5rem;
+	bottom: 5rem;
+	width: 25rem; */
 	border: solid rgb(138, 240, 36);
 	border-width: 5px;
 	border-radius: 10px;
@@ -249,6 +246,24 @@ img {
 	border-width: 5px;
 	filter: drop-shadow(0 0 0.5rem black);
 	color: white;
+	font-weight: bolder;
+	font-size: 20px;
+	background-color: rgb(177, 27, 187);
+  padding-bottom: 2.25rem;
+}
+
+.serverbtn {
+	display: block;
+	text-align: center;
+	width: 20rem;
+	height: 2.2rem;
+	margin: auto;
+	margin-top: 2rem;
+	border-radius: 10px;
+	border-color: rgb(138, 240, 36);
+	border-width: 5px;
+	filter: drop-shadow(0 0 0.5rem black);
+	color: rgb(138, 240, 36);
 	font-weight: bolder;
 	font-size: 20px;
 	background-color: rgb(177, 27, 187);
