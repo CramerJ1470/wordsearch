@@ -3,8 +3,6 @@
 
 
 
-
-
 .titleblock {
 	border: 0.4rem groove rgb(138, 240, 36);
 	border-radius: 10px;
@@ -61,7 +59,7 @@
 .white {
 	color: rgb(95, 38, 109);
 	background-color: white;
-	z-index:4;
+	z-index: 1;
 }
 
 
@@ -260,6 +258,7 @@ button#restartgame {
 	margin: auto;
 	justify-content: center;
 	text-align:center;
+	z-index: 0;
 }
 
 .bottomb {

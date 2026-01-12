@@ -48,7 +48,7 @@ html {
 		font-size: 16px;
 	}
   div.regorstart {
-    height: 18.25rem;
+    height: auto;
     top: 88.5%;
   }
   button.startbtn {
@@ -71,7 +71,7 @@ html {
     font-size: 3rem;
   }
   div.regorstart {
-    height: 28.25rem;
+    height: auto;
     top: 50%;
   }
   button.startbtn {
@@ -199,7 +199,7 @@ code {
   text-shadow: 1px 1px 2px  rgb(95, 38, 109) ;
 }
 
-
+ 
 
 img {
 
@@ -215,9 +215,11 @@ img {
 	border-width: 5px;
 	border-radius: 10px;
 	background-image:url("./assets/bgpic.jpg");
-	background-position-y: 25%;
-	background-position-x: -5rem;
+	background-position-y: 50%;
+	background-position-x: -6rem;
 	filter: drop-shadow(0 0 2.5rem rgb(224, 26, 239));
+	padding-bottom: 1rem;
+	bottom: 2.5rem;
 }
 
 
@@ -295,13 +297,12 @@ img {
 	width: 17.5rem;
 	padding: 1rem;
 	text-align: justify;
-	margin-left: 25%;
-	margin-top: 1rem;
+	margin: 1rem 4rem 1rem 4rem;
 	border-radius: 10px;
 	border-color: rgb(138, 240, 36);
 	filter: drop-shadow(0 0 0.5rem black);
 	font-weight: bolder;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: rgb(177, 27, 187);
 	border-style: solid;
 	border-width: 5px;
@@ -319,11 +320,15 @@ img {
   
 }
 
-.submitLogin {
+.btn.submitLogin {
 	transform: translateX(-4.4rem);
 	width: 100%;
 	margin-left: 30%;
+	font-size: 2rem;
+	padding: auto;
+
 }
+ 
 
 input.rnd {
   border-radius: 10px;

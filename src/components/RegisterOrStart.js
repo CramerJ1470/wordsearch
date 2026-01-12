@@ -19,9 +19,11 @@ function RegisterOrStart ({registered, startPlay}) {
 	function openLogin() {
 		//console.log("openLogin activated");
 		//console.log(document.getElementById("log").style.display);
-		document.getElementById("log").style.display = "inherit";
+		document.getElementById("log").style.display = "block";
 		document.getElementById("login2").classList.add("hide");
-		document.getElementById("regorstart").classList.add("regorstartBigger");
+		document.getElementById("register").classList.add("hiddenorig");
+		document.getElementById("guest").classList.add("hiddenorig");
+
 	}
 	function closeLogin() {
 		document.getElementById("log").style.display = "none";
@@ -31,7 +33,7 @@ function RegisterOrStart ({registered, startPlay}) {
 		document.getElementById("login2").classList.remove("hide");
 	}
 	function openRegister() {
-		document.getElementById("reg").style.display = "inherit";
+		document.getElementById("reg").style.display = "block";
 		document.getElementById("register").classList.add("hide");
 		document.getElementById("regorstart").classList.add("regorstartBigger");
 	}
@@ -212,8 +214,8 @@ function RegisterOrStart ({registered, startPlay}) {
 				<button className="serverbtn" id="login2" onClick={openLogin}>
 										Login
 				</button>
-				<div id="log">
-					<div className="form-outline mb-4 ">
+				<div id="log" >
+					<div className="form-outline mb-1 ">
 						<button className="closeBtn" onClick={closeLogin}>
 							X
 						</button>
@@ -247,7 +249,7 @@ function RegisterOrStart ({registered, startPlay}) {
 						</label>
 						{passwordInvalid && <p>please enter valid username</p>}
 					</div>
-					<div>
+					<div className="submitbox">
 						<button
 							className="btn submitLogin"
 							onClick={submitHandler}
