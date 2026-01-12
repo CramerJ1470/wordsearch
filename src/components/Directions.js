@@ -207,7 +207,7 @@ function foundWord() {
     openAlert(); alertWindow.innerText ="You've Found All The Words!!!"; 
     // document.getElementById("startplay").classList.remove("hiddenorig");
     document.getElementById("foundword").classList.add("hiddenorig");
-    document.getElementById("restartgame").classList.add("hiddenorig");
+    document.getElementById("restartgame").classList.remove("hiddenorig");
     document.getElementById("restartword").classList.add("hiddenorig");
   } else if (wordList.includes(wordToCheck)) { 
     openAlert(); alertWindow.innerText =`You found ${wordToCheck}`; 

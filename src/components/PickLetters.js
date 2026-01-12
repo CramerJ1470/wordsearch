@@ -93,7 +93,7 @@ function foundWord() {
          
     if (wordList.length ===1 && wordList[0] === wordToCheck) { document.getElementById(`${wordToCheck}`).style.color="rgb(95, 38, 109)";alert("You've Found All The Words!!!"); document.getElementById("startplay").classList.remove("hiddenorig");
     document.getElementById("foundword").classList.add("hiddenorig");
-    document.getElementById("restartgame").classList.add("hiddenorig");document.getElementById("makeownwords").classList.remove("hiddenorig");
+    document.getElementById("restartgame").classList.remove("hiddenorig");document.getElementById("makeownwords").classList.remove("hiddenorig");
 } else if (wordList.includes(wordToCheck)) { alert(`You found ${wordToCheck}`); document.getElementById(`${wordToCheck}`).style.color="rgb(95, 38, 109)";
     wordList = wordList.filter(e => e !== checkedList[0]);
     } else {alert("Word is not on the list");}

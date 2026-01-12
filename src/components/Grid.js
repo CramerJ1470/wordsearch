@@ -385,7 +385,7 @@ checkedList = wordList;
      function foundWord() {
     
         if (wordList.length ===1 && wordList[0] === pickedWord) { 
-            alert("You've Found All The Words!!!");
+            alert("You've Found All The Words!!!!!!"); document.getElementById("restartgame").classList.remove("hiddenorig");
         } else if (wordList.includes(pickedWord)) { 
             alert(`You found ${pickedWord}`); document.getElementById(`${pickedWord}`).style.color="rgb(95, 38, 109)";
             wordList = wordList.filter(e => e !== checkedList[0]);}
